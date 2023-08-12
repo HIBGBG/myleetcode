@@ -1,4 +1,4 @@
-package cici01
+package cci01
 
 import (
 	"fmt"
