@@ -81,7 +81,3 @@ func removeDuplicateNodes_Wrong(head *ListNode) *ListNode {
 	return head
 }
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}

@@ -52,3 +52,39 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return head.Next
 
 }
+
+
+func addTwoNumbers_old(l1 *ListNode, l2 *ListNode) *ListNode {
+	var head = new(ListNode)
+	cur:=head
+	flag:=0
+	for l1!=nil ||l2!=nil{
+		tmp:=flag
+		if l1!=nil{
+			tmp+=l1.Val
+			l1=l1.Next
+		}
+		if l2!=nil{
+			tmp+=l2.Val
+			l2=l2.Next
+		}
+		// if tmp>=10{
+		//     flag=1
+		//     tmp=tmp%10
+		// }else{
+		//     flag
+		// }
+		flag=tmp/10
+		tmp=tmp%10
+		cur.Next=new(ListNode)
+		cur.Next.Val=tmp
+		cur=cur.Next
+	}
+	//最后有进位
+	if flag==1{
+		cur.Next=new(ListNode)
+		cur.Next.Val=1
+	}
+
+	return head.Next
+}
